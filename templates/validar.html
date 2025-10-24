@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación de empleado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="text-center p-5">
+  {% if nombre and activo %}
+    <h1 class="text-success">✅ Empleado válido</h1>
+    <p>{{ nombre }} está dado de alta.</p>
+  {% elif nombre and not activo %}
+    <h1 class="text-danger">❌ Empleado inactivo</h1>
+    <p>{{ nombre }} no está dado de alta actualmente.</p>
+  {% else %}
+    <h1 class="text-danger">❌ Código no válido</h1>
+    <p>El QR no pertenece a ningún empleado registrado.</p>
+  {% endif %}
+</body>
+</html>
