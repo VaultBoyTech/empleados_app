@@ -6,7 +6,7 @@ app = Flask(__name__)
 # === Configuración ===
 DB = "empleados.db"
 QR_FOLDER = "static/qrs"
-BASE_URL = "https://tu-dominio.com"  # <-- cambia por tu dominio real
+BASE_URL = "https://empleados-app-04ib.onrender.com"  # ✅ Tu dominio de Render
 
 os.makedirs(QR_FOLDER, exist_ok=True)
 
@@ -26,7 +26,7 @@ def init_db():
 init_db()
 
 
-# === Funciones auxiliares ===
+# === Función para generar QR ===
 def generar_qr(token):
     url = f"{BASE_URL}/validar/{token}"
     img = qrcode.make(url)
